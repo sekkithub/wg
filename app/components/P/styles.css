@@ -1,0 +1,9 @@
+.copy {
+  margin-bottom: 48px;
+}
+
+.copy br {
+  @media (max-width: 1082px) {
+    display: none;
+  }
+}

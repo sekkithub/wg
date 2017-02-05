@@ -1,0 +1,7 @@
+.container {
+  background-color: var(--base-bg-color);
+  min-height: 100%;
+  padding-bottom: 48px;
+  padding-top: 72px;
+  position: relative;
+}

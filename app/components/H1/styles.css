@@ -1,0 +1,9 @@
+.heading1 {
+  color: var(--base-navy);
+  font-family: gt-pressura-bold, sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: .04em;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}

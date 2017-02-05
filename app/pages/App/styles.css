@@ -1,0 +1,80 @@
+@import 'sanitize.css/sanitize.css';
+
+@font-face {
+  font-family: 'Janson';
+  src: url('./fonts/Janson_Text_LT_Std_55_Roman.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'gt-pressura-bold';
+  src: url('./fonts/gt-pressura-bold.woff') format('woff');
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+
+/*
+ * Viewport-based Layout growth
+ *
+ * There's a lot going on here but in general the layout follows a few set of
+ * rules:
+ *
+ * 1. The root's font-size will not shrink below the $base-font-size
+ * 2. The font-size will grow with the viewport as long as the aspect-ratio is
+ *    maintained.
+ * 3. This growth effect is reduced by the $growth-scaler so that extra
+ *    screen-space is still valuable and ctrl+ and ctrl- still work.
+ */
+
+/* with a default font-size of 16px allow a minimum readable font-size of 14px */
+$base-font-size: 1.0625rem;
+$base-viewport-width: 50;
+$base-viewport-height: 60;
+$aspect-ratio: $base-viewport-width/$base-viewport-height;
+$growth-scaler: 0.4;
+$min-growth-width: calc($base-font-size * $base-viewport-width);
+$min-growth-height: calc($base-font-size * $base-viewport-height);
+
+:root {
+  font-size: $base-font-size;
+  font-family: var(--body-font);
+
+  @media (min-width: $min-growth-width) and (min-height: $min-growth-height) {
+    @media (max-aspect-ratio: $aspect-ratio) {
+      font-size: calc($base-font-size + ((calc(100vw / $base-viewport-width) - $base-font-size) * $growth-scaler));
+    }
+    @media (min-aspect-ratio: $aspect-ratio) {
+      font-size: calc($base-font-size + ((calc(100vh / $base-viewport-height) - $base-font-size) * $growth-scaler));
+    }
+  }
+}
+
+
+/* DEBUG VIEWPORT */
+/*
+:root::before {
+  $width: calc(1em * $base-viewport-width);
+  $height: calc(1em * $base-viewport-height);
+  display: block;
+  content: '';
+  width: $width;
+  height: $height;
+  border: .5rem solid rgba(25%, 75%, 25%, .5);
+  position: absolute;
+  left: calc(50vw - ($width / 2));
+}
+*/
+
+:global #app {
+  color: var(--base-navy);
+  height: 100%;
+  min-width: 100%;
+}

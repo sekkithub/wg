@@ -1,0 +1,10 @@
+.section {
+  margin: 0 auto;
+  max-width: 440px;
+  padding-bottom: 48px;
+  text-align: center;
+
+  @media (min-width: 832px) {
+    padding-bottom: 0;
+  }
+}
