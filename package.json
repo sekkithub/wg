@@ -23,6 +23,7 @@
     "reselect": "^2.2.1",
     "sanitize.css": "^3.3.0",
     "scroll-behavior": "^0.3.2",
+    "styled-grid": "^1.0.0-beta.1",
     "whatwg-fetch": "^0.11.0"
   },
   "devDependencies": {
@@ -52,6 +53,7 @@
     "exports-loader": "^0.6.3",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
+    "grid-styled": "^1.0.1",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.14.0",
     "imports-loader": "^0.6.5",
